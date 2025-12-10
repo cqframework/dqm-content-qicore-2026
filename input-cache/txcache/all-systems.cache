@@ -1,0 +1,184 @@
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "text/cql"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:13"
+    }]
+  }
+}, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "text/cql",
+  "code" : "text/cql",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing urn:uuid:e4563f3f-f7ef-4bd0-a7e0-ccfbf656f650 for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n15 15   : 15ms : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n15 0    : 15ms : Validate \"[#text/cql (\"\")]\" and infer system\r\n15 0    : 15ms : Check \"#text/cql\"\r\n15 0    : 15ms : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n15 0    : 15ms : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n15 0    : 15ms : check code in (urn:ietf:bcp:13) at \r\n15 0    : 15ms : Code \"text/cql\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "text/cql"
+}, "url": "http://hl7.org/fhir/ValueSet/mimetypes", "version": "4.0.1", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "text/cql",
+  "code" : "text/cql",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n15 15   : 0ms  : Analysing http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 for validation purposes\r\n15 0    : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n15 0    : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n15 0    : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n15 0    : 0ms  : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n15 0    : 0ms  : Validate \"[#text/cql (\"\")]\" and infer system\r\n15 0    : 0ms  : Check \"#text/cql\"\r\n15 0    : 0ms  : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n15 0    : 0ms  : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n15 0    : 0ms  : check code in (urn:ietf:bcp:13) at \r\n15 0    : 0ms  : Code \"text/cql\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/elm+xml"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:13"
+    }]
+  }
+}, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "application/elm+xml",
+  "code" : "application/elm+xml",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing urn:uuid:5d11826c-cf62-45ea-bd71-2e45922cf394 for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n0 0     : 0ms  : Validate \"[#application/elm+xml (\"\")]\" and infer system\r\n0 0     : 0ms  : Check \"#application/elm+xml\"\r\n0 0     : 0ms  : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n0 0     : 0ms  : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n0 0     : 0ms  : check code in (urn:ietf:bcp:13) at \r\n0 0     : 0ms  : Code \"application/elm+xml\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/elm+xml"
+}, "url": "http://hl7.org/fhir/ValueSet/mimetypes", "version": "4.0.1", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "application/elm+xml",
+  "code" : "application/elm+xml",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n0 0     : 0ms  : Validate \"[#application/elm+xml (\"\")]\" and infer system\r\n0 0     : 0ms  : Check \"#application/elm+xml\"\r\n0 0     : 0ms  : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n0 0     : 0ms  : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n0 0     : 0ms  : check code in (urn:ietf:bcp:13) at \r\n0 0     : 0ms  : Code \"application/elm+xml\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/elm+json"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:13"
+    }]
+  }
+}, "langs":"en-US", "useServer":"true", "useClient":"false", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "application/elm+json",
+  "code" : "application/elm+json",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing urn:uuid:8fde9f14-0c76-4939-9dcd-0102c1fc3a5d for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n0 0     : 0ms  : Validate \"[#application/elm+json (\"\")]\" and infer system\r\n0 0     : 0ms  : Check \"#application/elm+json\"\r\n0 0     : 0ms  : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n0 0     : 0ms  : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n0 0     : 0ms  : check code in (urn:ietf:bcp:13) at \r\n0 0     : 0ms  : Code \"application/elm+json\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "code" : "application/elm+json"
+}, "url": "http://hl7.org/fhir/ValueSet/mimetypes", "version": "4.0.1", "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"true", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "id" : "manifest",
+  "parameter" : [{
+    "name" : "system-version",
+    "valueCanonical" : "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+  },
+  {
+    "name" : "system-version",
+    "valueString" : "http://hl7.org/fhir/CodeSystem/task-code|4.0.1"
+  }]
+}}####
+v: {
+  "display" : "application/elm+json",
+  "code" : "application/elm+json",
+  "system" : "urn:ietf:bcp:13",
+  "server" : "https://tx-dev.fhir.org/r4",
+  "diagnostics" : "0 0 : start\r\n0 0     : 0ms  : Analysing http://hl7.org/fhir/ValueSet/mimetypes|4.0.1 for validation purposes\r\n0 0     : 0ms  : Parameters: disp-lang=en-US, default-to-latest\r\n0 0     : 0ms  : Version Rules: system-version:http://snomed.info/sct#http://snomed.info/sct/731000124108\r\n0 0     : 0ms  : Prepare include: \"(urn:ietf:bcp:13)\"\r\n0 0     : 0ms  : CodeSystem found: \"urn:ietf:bcp:13|\"\r\n0 0     : 0ms  : Validate \"[#application/elm+json (\"\")]\" and infer system\r\n0 0     : 0ms  : Check \"#application/elm+json\"\r\n0 0     : 0ms  : Inferred CodeSystem = \"urn:ietf:bcp:13\"\r\n0 0     : 0ms  : CodeSystem found: urn:ietf:bcp:13| for urn:ietf:bcp:13\r\n0 0     : 0ms  : check code in (urn:ietf:bcp:13) at \r\n0 0     : 0ms  : Code \"application/elm+json\" found in urn:ietf:bcp:13|\r\n",
+  "unknown-systems" : "",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
