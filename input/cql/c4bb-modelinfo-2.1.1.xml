@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <modelInfo name="C4BB" version="2.1.1" url="http://hl7.org/fhir/us/carin-bb" targetUrl="http://hl7.org/fhir" targetQualifier="c4bb" xmlns="urn:hl7-org:elm-modelinfo:r1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <requiredModelInfo name="System" version="1.0.0"/>
-    <requiredModelInfo name="USCore" version "7.0.0"/>
+    <requiredModelInfo name="FHIR" version="4.0.1"/>
+    <requiredModelInfo name="USCore" version="7.0.0"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage" identifier="http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Coverage" label="C4BB Coverage" retrievable="true" baseType="USCore.CoverageProfile">
         <element name="identifier">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.Identifier"/>
@@ -43,8 +44,8 @@
         <element name="group" elementType="C4BB.Coverage.Class.group"/>
         <element name="plan" elementType="C4BB.Coverage.Class.plan"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage.Class.group" retrievable="false" baseType="C4BB.Coverage.Class"/>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage.Class.plan" retrievable="false" baseType="C4BB.Coverage.Class"/>
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage.Class.group" retrievable="false" baseType="USCore.Coverage.Class.group"/>
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage.Class.plan" retrievable="false" baseType="USCore.Coverage.Class.plan"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="Coverage.CostToBeneficiary" retrievable="false" baseType="USCore.Coverage.CostToBeneficiary">
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="value">
@@ -120,7 +121,7 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.AddItem"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
         <element name="total">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Total"/>
@@ -143,7 +144,7 @@
         <contextRelationship context="Patient" relatedKeyElement="party"/>
         <contextRelationship context="RelatedPerson" relatedKeyElement="party"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Accident" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Accident" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Accident">
         <element name="date" elementType="FHIR.date"/>
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="location">
@@ -153,7 +154,7 @@
             </elementTypeSpecifier>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem" retrievable="false" baseType="FHIR.ExplanationOfBenefit.AddItem">
         <element name="itemSequence">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
@@ -197,13 +198,13 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
         <element name="detail">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.AddItem.Detail"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem.Detail" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem.Detail" retrievable="false" baseType="FHIR.ExplanationOfBenefit.AddItem.Detail">
         <element name="productOrService" elementType="FHIR.CodeableConcept"/>
         <element name="modifier">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.CodeableConcept"/>
@@ -215,13 +216,13 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
         <element name="subDetail">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.AddItem.Detail.SubDetail"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem.Detail.SubDetail" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.AddItem.Detail.SubDetail" retrievable="false" baseType="FHIR.ExplanationOfBenefit.AddItem.Detail.SubDetail">
         <element name="productOrService" elementType="FHIR.CodeableConcept"/>
         <element name="modifier">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.CodeableConcept"/>
@@ -233,10 +234,10 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Adjudication" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Adjudication" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Item.Adjudication">
         <element name="category" elementType="FHIR.CodeableConcept"/>
         <element name="reason" elementType="FHIR.CodeableConcept"/>
         <element name="amount" elementType="FHIR.Money"/>
@@ -249,7 +250,7 @@
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Adjudication.benefitpaymentstatus" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Adjudication"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Adjudication.billingnetworkstatus" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Adjudication"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Adjudication.renderingnetworkstatus" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Adjudication"/>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.BenefitBalance" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.BenefitBalance" retrievable="false" baseType="FHIR.ExplanationOfBenefit.BenefitBalance">
         <element name="category" elementType="FHIR.CodeableConcept"/>
         <element name="excluded" elementType="FHIR.boolean"/>
         <element name="name" elementType="FHIR.string"/>
@@ -261,7 +262,7 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.BenefitBalance.Financial"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.BenefitBalance.Financial" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.BenefitBalance.Financial" retrievable="false" baseType="FHIR.ExplanationOfBenefit.BenefitBalance.Financial">
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="allowed">
             <elementTypeSpecifier xsi:type="ChoiceTypeSpecifier">
@@ -277,28 +278,28 @@
             </elementTypeSpecifier>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.CareTeam" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.CareTeam" retrievable="false" baseType="FHIR.ExplanationOfBenefit.CareTeam">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="provider" elementType="FHIR.Reference"/>
         <element name="responsible" elementType="FHIR.boolean"/>
         <element name="role" elementType="FHIR.CodeableConcept"/>
         <element name="qualification" elementType="FHIR.CodeableConcept"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Diagnosis" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Diagnosis" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Diagnosis">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="diagnosis" elementType="FHIR.CodeableConcept"/>
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="onAdmission" elementType="FHIR.CodeableConcept"/>
         <element name="packageCode" elementType="FHIR.CodeableConcept"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Insurance" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Insurance" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Insurance">
         <element name="focal" elementType="FHIR.boolean"/>
         <element name="coverage" elementType="FHIR.Reference"/>
         <element name="preAuthRef">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.string"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Item">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="careTeamSequence">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
@@ -351,7 +352,7 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Detail"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Adjudication" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Adjudication" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Item.Adjudication">
         <element name="category" elementType="FHIR.CodeableConcept"/>
         <element name="reason" elementType="FHIR.CodeableConcept"/>
         <element name="amount" elementType="FHIR.Money"/>
@@ -368,7 +369,7 @@
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Adjudication.allowedunits" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Adjudication.benefitpaymentstatus" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Adjudication.rejectreason" retrievable="false" baseType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Detail" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Detail" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Item.Detail">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="revenue" elementType="FHIR.CodeableConcept"/>
         <element name="category" elementType="FHIR.CodeableConcept"/>
@@ -389,13 +390,13 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
         <element name="subDetail">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Detail.SubDetail"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Detail.SubDetail" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Item.Detail.SubDetail" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Item.Detail.SubDetail">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="revenue" elementType="FHIR.CodeableConcept"/>
         <element name="category" elementType="FHIR.CodeableConcept"/>
@@ -416,14 +417,14 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.positiveInt"/>
         </element>
         <element name="adjudication">
-            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit#ExplanationOfBenefit.item.adjudication"/>
+            <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="C4BB.ExplanationOfBenefit.Item.Adjudication"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Payee" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Payee" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Payee">
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="party" elementType="FHIR.Reference"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Payment" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Payment" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Payment">
         <element name="type" elementType="FHIR.CodeableConcept"/>
         <element name="adjustment" elementType="FHIR.Money"/>
         <element name="adjustmentReason" elementType="FHIR.CodeableConcept"/>
@@ -431,7 +432,7 @@
         <element name="amount" elementType="FHIR.Money"/>
         <element name="identifier" elementType="FHIR.Identifier"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Procedure" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Procedure" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Procedure">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="type">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.CodeableConcept"/>
@@ -447,18 +448,18 @@
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.Reference"/>
         </element>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.ProcessNote" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.ProcessNote" retrievable="false" baseType="FHIR.ExplanationOfBenefit.ProcessNote">
         <element name="number" elementType="FHIR.positiveInt"/>
         <element name="type" elementType="FHIR.NoteType"/>
         <element name="text" elementType="FHIR.string"/>
         <element name="language" elementType="FHIR.CodeableConcept"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Related" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Related" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Related">
         <element name="claim" elementType="FHIR.Reference"/>
         <element name="relationship" elementType="FHIR.CodeableConcept"/>
         <element name="reference" elementType="FHIR.Identifier"/>
     </typeInfo>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.SupportingInfo" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.SupportingInfo" retrievable="false" baseType="FHIR.ExplanationOfBenefit.SupportingInfo">
         <element name="sequence" elementType="FHIR.positiveInt"/>
         <element name="category" elementType="FHIR.CodeableConcept"/>
         <element name="code" elementType="FHIR.CodeableConcept"/>
@@ -528,7 +529,7 @@
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.SupportingInfo.stretcherpurpose" retrievable="false" baseType="C4BB.ExplanationOfBenefit.SupportingInfo"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.SupportingInfo.transportationdistance" retrievable="false" baseType="C4BB.ExplanationOfBenefit.SupportingInfo"/>
     <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.SupportingInfo.typeofbill" retrievable="false" baseType="C4BB.ExplanationOfBenefit.SupportingInfo"/>
-    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Total" retrievable="false" baseType="C4BB.BackboneElement">
+    <typeInfo xsi:type="ClassInfo" namespace="C4BB" name="ExplanationOfBenefit.Total" retrievable="false" baseType="FHIR.ExplanationOfBenefit.Total">
         <element name="category" elementType="FHIR.CodeableConcept"/>
         <element name="amount" elementType="FHIR.Money"/>
         <element name="adjudicationamounttype">
@@ -1331,7 +1332,7 @@
         <element name="telecom">
             <elementTypeSpecifier xsi:type="ListTypeSpecifier" elementType="FHIR.ContactPoint"/>
         </element>
-        <element name="gender" elementType="FHIR.code"/>
+        <element name="gender" elementType="FHIR.AdministrativeGender"/>
         <element name="birthDate" elementType="FHIR.date"/>
         <element name="deceased">
             <elementTypeSpecifier xsi:type="ChoiceTypeSpecifier">
