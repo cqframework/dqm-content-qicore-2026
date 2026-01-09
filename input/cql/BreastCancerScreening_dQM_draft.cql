@@ -27,6 +27,7 @@ valueset "Status Post Right Mastectomy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2
 valueset "Unilateral Mastectomy Left": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1133'
 valueset "Unilateral Mastectomy Right": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1134'
 valueset "Unilateral Mastectomy": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1285'
+valueset "HCPCS Mammogram Codes": 'https://cms.madie.gov/ValueSet/HCPCS-Mammogram-Codes'
 
 code "Female (finding)": '248152002' from "SNOMEDCT" display 'Female (finding)'
 code "Entire left breast (body structure)": '361716006' from "SNOMEDCT" display 'Entire left breast (body structure)'
@@ -49,7 +50,7 @@ define "Denominator":
   "Initial Population"
 
 define "Denominator Exclusions":
-  //"Is deceased during measurement period"
+  "Is deceased during measurement period"
     or Hospice."Has Hospice Services"
     or ( ( exists ( "Right Mastectomy Diagnosis" )
           or exists ( "Right Mastectomy Procedure" )
@@ -64,24 +65,24 @@ define "Denominator Exclusions":
     or AIFrailLTCF."Is Age 66 or Older Living Long Term in a Nursing Home"
     or PalliativeCare."Has Palliative Care in the Measurement Period"
 
-// define "Is deceased during measurement period":
-//     Patient."Deceased during"("Measurement Period")
+define "Is deceased during measurement period":
+    Patient."Deceased during"("Measurement Period")
 
-// define fluent function "Deceased during"(patient FHIR.Patient, duringPeriod Interval<System.Date>):
-//     if patient is null or duringPeriod is null or patient.deceased is null then false
-//     else 
-//         patient."Deceased date"() during duringPeriod
+define fluent function "Deceased during"(patient FHIR.Patient, duringPeriod Interval<System.Date>):
+    if patient is null or duringPeriod is null or patient.deceased is null then false
+    else 
+        patient."Deceased date"() during duringPeriod
 
-// define fluent function "Deceased date"(patient FHIR.Patient):
-//     if patient is null then null
-//     else 
-//         if patient.deceased is null then null
-//         else
-//             case 
-//                 when patient.deceased is FHIR.dateTime then 
-//                     date from (patient.deceased as FHIR.dateTime)
-//                 else Common.Error(Errors."Not supported", 'Type not supported')
-//             end
+define fluent function "Deceased date"(patient FHIR.Patient):
+    if patient is null then null
+    else 
+        if patient.deceased is null then null
+        else
+            case 
+                when patient.deceased is FHIR.dateTime then 
+                    date from (patient.deceased as FHIR.dateTime)
+                else null
+            end
 
 define "Right Mastectomy Diagnosis":
   ( ( [ConditionEncounterDiagnosis: "Status Post Right Mastectomy"]
@@ -147,7 +148,7 @@ define fluent function "With mammography during"(
     else
         claims
             ."With product or service during"(
-                "Mammography",
+                "HCPCS Mammogram Codes",
                 duringPeriod
             )
 
@@ -206,7 +207,7 @@ define fluent function "With mammography during"(
     else
         eobs
             ."With product or service during"(
-                "Mammography",
+                "HCPCS Mammogram Codes",
                 duringPeriod
             )
 
